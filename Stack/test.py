@@ -1,4 +1,4 @@
-import stack as st
+import Stack as st
 
 ST = st.Stack()
 
@@ -25,16 +25,16 @@ def peek():
         print(str(thing))
 
 def display():
-    print(LL)
+    print(ST)
 
-def remove():
+def pop():
     itemPopped = ST.pop()
     if itemPopped == None:
         print("Nothing to pop!")
     else:
         print(str(itemPopped) + " POPPED from stack")
     print("Stack is now: ")
-    print(LL)
+    print(ST)
 
 def main():
     

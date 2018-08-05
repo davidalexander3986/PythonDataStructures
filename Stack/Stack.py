@@ -14,7 +14,6 @@ class Stack:
     def pop(self):
         if self.count > 0:
             toReturn = self.items[self.stackptr]
-            self.items[self.stackptr] = None
             self.stackptr -= 1
             self.count -= 1
         else:
@@ -30,7 +29,7 @@ class Stack:
             strPtr = self.stackptr
             toReturn += "TOP:\t"
             while strPtr > -1:
-                toReturn += str(self.items[strPtr]) + "\n\t\t"
+                toReturn += str(self.items[strPtr]) + "\n\t"
                 strPtr -= 1
         else:
             toReturn += "STACK IS EMPTY"
