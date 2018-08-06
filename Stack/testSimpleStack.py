@@ -1,4 +1,4 @@
-import Stack as st
+import SimpleStack as st
 
 ST = st.Stack()
 

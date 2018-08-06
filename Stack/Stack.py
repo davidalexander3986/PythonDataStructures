@@ -1,42 +1,25 @@
-
+import StackNode as SN
 class Stack:
-    
-    def __init__(self):
-        self.items = []
-        self.count = 0
-        self.stackptr = -1
 
-    def push(self, data):
-        self.items.append(data)
-        self.count += 1
-        self.stackptr += 1
+    def __init__(self):
+        self.top = None
 
     def pop(self):
-        if self.count > 0:
-            toReturn = self.items[self.stackptr]
-            self.stackptr -= 1
-            self.count -= 1
+        if top == None:
+            return None
         else:
-            toReturn = None
-        return toReturn
+            toReturn = self.top.data
+            self.top = self.top.next
+            return toReturn
+
+    def push(self, thing):
+        oldTop = self.top
+        self.top = StackNode(thing)
+        self.top.next = oldTop
 
     def peek(self):
-        return self.items[self.stackptr]
+        return self.top.data
 
-    def __str__(self):
-        toReturn  = ""
-        if self.count > 0:
-            strPtr = self.stackptr
-            toReturn += "TOP:\t"
-            while strPtr > -1:
-                toReturn += str(self.items[strPtr]) + "\n\t"
-                strPtr -= 1
-        else:
-            toReturn += "STACK IS EMPTY"
+    def isEmpty(self):
+        return self.top == None
 
-        return toReturn
-                
-
-            
-
-        
